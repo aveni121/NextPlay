@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "scanner/css/styles.css" %}'>
+    <title>NextPlay</title>
+</head>
+<body>
+    <div class="main">
+        <form action="{% url 'scanner:index' %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="~Next-Play~" class="logo">
+        </form>
+    </div>
+</body>
+</html>

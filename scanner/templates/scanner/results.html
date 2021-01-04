@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "scanner/css/styles.css" %}'>
+    <title>NextPlay</title>
+</head>
+<body style="color:white;">
+    <div>
+        {% for ticker in tickers %}
+        <ul class="ls">
+            <li><h1 style="color: goldenrod;">{{ ticker.name }}</h1></li>
+            <li><h3 style="color:rgb(187, 112, 0);">Symbol: <span style="color: yellow;">{{ ticker.symbol }}</span></h3></li>
+            <li>{{ ticker.desc }}</li>
+            <br>
+            <li style="color: goldenrod;">
+                <span style="color: rgba(93, 159, 245, 0.795);">{{ ticker.table|safe }} </span></li>
+            <br>
+            {% if ticker.vol_change > 0 %}
+            <li style="color: rgb(187, 112, 0);">2-Week Volume Change: <span style="color: green;">{{ ticker.vol_change }}%</span></li>
+            {% else %}
+            <li style="color: rgb(187, 112, 0);">2-Week Volume Change: <span style="color: red;">{{ ticker.vol_change }}%</span></li>
+            {% endif %}
+            <li style="color: rgb(187, 112, 0);">2-Week Daily Gain (Average):
+                {% if ticker.gain > 0 %}
+                <span style="color: green;">
+                {% else %}
+                <span style="color: green;">
+                {% endif %}{{ ticker.gain }}%</span></li>
+        </ul>>   {% endfor %}
+    </div>
+</body>
+</html>

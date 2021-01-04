@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "scanner/css/styles.css" %}'>
+    <title>NextPlay</title>
+</head>
+<body onload="document.forms['process'].submit()">
+    <div class="main">
+        <form name="process" method="POST">
+        {% csrf_token %}
+        <br>
+        <br>
+        <br>
+        <input type="submit" value="Loading Results..." class="logo">
+        </form>
+        <br>
+        <br>
+        <img src='{% static "scanner/images/spinner.gif" %}' alt="Nyan Cat" width="100px">
+        <br>
+        <br>
+        <span>
+        <img src='{% static "scanner/images/nyan.gif" %}' alt="Nyan Cat" width="300x">
+        <img src='{% static "scanner/images/money.gif" %}' alt="Nyan Cat" width="100px">
+        </span>
+    </div>
+</body>
+</html>
