@@ -8,11 +8,11 @@ import enchant
 import yfinance as yf
 
 #Global Variables
-reddit = praw.Reddit(client_id = 'LXGTI71Cz1Nsjw',
-                     client_secret = 'gv-iTYdVH0r7ln3rQsdSslNuZzQl_Q',
-                     user_agent = 'StockUp',
-                     username = 'aveni121',
-                     password = 'Lumenta313!')
+reddit = praw.Reddit(client_id = '#############',
+                     client_secret = '########',
+                     user_agent = '#######',
+                     username = '###########',
+                     password = '##########')
 
 subred = reddit.subreddit('pennystocks')
 new_posts = subred.new(limit = 50)
